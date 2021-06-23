@@ -12,7 +12,7 @@ export class PrecoMetroQuadradoController {
   @ApiOperation({ summary: 'Retorna valor do metro quadrado.' })
   @ApiResponse({ status: 200, description: 'Registro Encontrado', type: PrecoMetroQuadradoResponseDTO })
   @Get()
-  async returnPrecoMetroQuadrado(): Promise <any> {
+  async returnPrecoMetroQuadrado(): Promise<PrecoMetroQuadradoResponseDTO> {
     return await this.precoMtQuadServ.getPrecoPorMetroQuadrado();
   }
 

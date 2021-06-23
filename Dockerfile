@@ -22,7 +22,7 @@ WORKDIR /app
 COPY --from=builder /app/package*.json /app/
 COPY --from=builder /app/dist/ /app/dist/
 
-EXPOSE 3000
+EXPOSE 3001
 
 RUN yarn
 
