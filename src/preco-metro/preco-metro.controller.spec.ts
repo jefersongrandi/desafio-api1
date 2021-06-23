@@ -24,7 +24,7 @@ describe('PrecoMetro2Controller', () => {
   it('call get getPrecoPorMetroQuadrado() do service', async () => {
     service.getPrecoPorMetroQuadrado = jest.fn(service.getPrecoPorMetroQuadrado);
     await controller.returnPrecoMetroQuadrado();
-    expect(service.getPrecoPorMetroQuadrado).toHaveBeenCalledTimes(3);
+    expect(service.getPrecoPorMetroQuadrado).toHaveBeenCalledTimes(1);
   })
 
 });
