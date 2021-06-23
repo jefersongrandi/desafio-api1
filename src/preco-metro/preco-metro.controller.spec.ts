@@ -1,7 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { PrecoMetroQuadradoController } from './preco-metro.controller';
 import { PrecoMetroQuadradoService } from './preco-metro.service';
-jest.mock('./preco-metro2.service');
 
 describe('PrecoMetro2Controller', () => {
   let controller: PrecoMetroQuadradoController;
@@ -22,11 +21,10 @@ describe('PrecoMetro2Controller', () => {
     expect(controller).toBeDefined();
   });
 
-  it('call get getPrecoPorMetroQuadrado() of the service', async () => {
+  it('call get getPrecoPorMetroQuadrado() do service', async () => {
     service.getPrecoPorMetroQuadrado = jest.fn(service.getPrecoPorMetroQuadrado);
-    //const teste = jest.spyOn(PrecoMetro2Service, 'getPrecoPorMetroQuadrado');
     await controller.returnPrecoMetroQuadrado();
-    expect(service.getPrecoPorMetroQuadrado).toHaveBeenCalled();
+    expect(service.getPrecoPorMetroQuadrado).toHaveBeenCalledTimes(2);
   })
 
 });

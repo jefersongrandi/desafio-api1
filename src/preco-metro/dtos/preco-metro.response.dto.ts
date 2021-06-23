@@ -1,8 +1,7 @@
   
 import { ApiProperty } from '@nestjs/swagger';
-import { PrecoMetroQuadradoInterface } from '../interfaces/preco-metro.interface'
 
-export class PrecoMetroQuadrado implements PrecoMetroQuadradoInterface {
+export class PrecoMetroQuadradoDTO {
 
   @ApiProperty({ example: 1, description: 'Código identificador do registro' })
   id: number;

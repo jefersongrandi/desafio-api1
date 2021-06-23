@@ -1,11 +1,11 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { PrecoMetroQuadradoService } from './preco-metro.service';
-import { PrecoMetroQuadrado } from './entities/preco-metro.entity'; 
+import { PrecoMetroQuadradoDTO } from './dtos/preco-metro.response.dto';
 
 describe('PrecoMetro2Service', () => {
 
   let service: PrecoMetroQuadradoService;
-  let precoMetroQuadrado: PrecoMetroQuadrado = new PrecoMetroQuadrado();
+  //let precoMetroQuadrado: PrecoMetroQuadrado = new PrecoMetroQuadrado();
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -20,8 +20,10 @@ describe('PrecoMetro2Service', () => {
     expect(service).toBeDefined();
   });
 
-  it('call getPrecoPorMetroQuadrado()', async () => {
-    await expect(service.getPrecoPorMetroQuadrado()).toMatchObject({});
-  })
+  it('objeto de retorno getPrecoPorMetroQuadrado() ser um PrecoMetroQuadradoDTO', async () => {
+    const preco: PrecoMetroQuadradoDTO  = { id: 1, preco: 490.90 };
+    const result = await service.getPrecoPorMetroQuadrado();
+    expect(result).toMatchObject(preco);
+  }) 
 
 });
