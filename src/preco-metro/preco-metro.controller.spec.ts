@@ -1,3 +1,4 @@
+import * as request from 'supertest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { PrecoMetroQuadradoController } from './preco-metro.controller';
 import { PrecoMetroQuadradoService } from './preco-metro.service';
@@ -24,7 +25,7 @@ describe('PrecoMetro2Controller', () => {
   it('call getPrecoPorMetroQuadrado() do service', async () => {
     service.getPrecoPorMetroQuadrado = jest.fn(service.getPrecoPorMetroQuadrado);
     await controller.returnPrecoMetroQuadrado();
-    expect(service.getPrecoPorMetroQuadrado).toHaveBeenCalledTimes(2);
+    expect(service.getPrecoPorMetroQuadrado).toHaveBeenCalledTimes(1);
   })
 
 });

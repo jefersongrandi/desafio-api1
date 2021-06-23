@@ -1,13 +1,25 @@
-import { Injectable } from '@nestjs/common';
-import { PrecoMetroQuadradoDTO } from './dtos/preco-metro.response.dto'
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import { PrecoMetroQuadradoResponseDTO } from './dtos/preco-metro.response.dto'
+
+const getPreco: any = () => {
+  return new Promise ((resolve, reject): any => {
+    resolve({ id: 1, preco: 490.90 });
+  })
+}
 
 @Injectable()
 export class PrecoMetroQuadradoService {
-  //private readonly precometro2: PrecoMetro2;
 
-  async getPrecoPorMetroQuadrado(): Promise<PrecoMetroQuadradoDTO> {
-    const obj: PrecoMetroQuadradoDTO = { id: 1, preco: 490.90 };
-    return obj;
+  private precoMetroQuadrado: PrecoMetroQuadradoResponseDTO;
+  
+  async getPrecoPorMetroQuadrado(): Promise<PrecoMetroQuadradoResponseDTO> {
+    
+    try {
+      this.precoMetroQuadrado = await getPreco();
+    } catch (error) {
+      throw new InternalServerErrorException('Erro ao recuperar valor do metro quadrado.'); 
+    }
+    return this.precoMetroQuadrado;
   }
 
 }
