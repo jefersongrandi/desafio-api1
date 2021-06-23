@@ -3,7 +3,7 @@
 
 ## Descrição do Projeto
 
-A aplicação foi desenvolvida em node utilizando o framework NestJS. O objetivo e obter o valor do metro quadrado.
+A aplicação foi desenvolvida em node utilizando o framework NestJS. O objetivo da api é através de uma requisição Get obter o valor do metro quadrado.
 
 ## Orientações de Instalação
   
