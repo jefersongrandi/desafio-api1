@@ -29,7 +29,9 @@ A aplicação foi desenvolvida em node utilizando o framework NestJS. O objetivo
   # Execute a aplicação em modo de desenvolvimento
   $ npm run start:dev
 
-  # O servidor inciará na porta:3001 - acesse <http://localhost:3001>
+  # O servidor inciará na porta:3001 
+  
+  #acesse <http://localhost:3001/api> para ter acesso a documentação
   ```
   
   ## Test
